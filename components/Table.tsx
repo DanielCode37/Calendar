@@ -12,7 +12,7 @@ export default function Table(props: { data: any[][] }) {
 function Row(data: any[]): JSX.Element {
     return (
         <View style={styles.row}>
-            {data.map(item => { return <Text style={styles.cell}>{item}</Text> })}
+            {data.map(item => { return <Text style={styles.cell} key={Math.random().toString()} >{item}</Text> })}
         </View>
     );
 }
@@ -20,6 +20,8 @@ function Row(data: any[]): JSX.Element {
 const styles = StyleSheet.create({
     row: {
         flexDirection: 'row',
+        borderColor: '#0f0',
+        borderWidth: 3
     },
     cell: {
         padding: 10
