@@ -24,6 +24,9 @@ const styles = StyleSheet.create({
         borderWidth: 3
     },
     cell: {
-        padding: 10
+        padding: 10,
+        textAlign: 'center',
+        width: 50,
+        fontSize: 20
     }
 });
