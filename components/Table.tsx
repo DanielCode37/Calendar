@@ -20,13 +20,12 @@ function Row(data: any[]): JSX.Element {
 const styles = StyleSheet.create({
     row: {
         flexDirection: 'row',
-        borderColor: '#0f0',
-        borderWidth: 3
     },
     cell: {
         padding: 10,
         textAlign: 'center',
         width: 50,
-        fontSize: 20
+        fontSize: 20,
+        color: 'whitesmoke'
     }
 });
