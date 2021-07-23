@@ -1,5 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import KeyGenerator from '../src/Key';
+
+const keyGen = new KeyGenerator;
 
 export default function Table(props: { data: any[][] }) {
     return (
@@ -12,7 +15,7 @@ export default function Table(props: { data: any[][] }) {
 function Row(data: any[]): JSX.Element {
     return (
         <View style={styles.row}>
-            {data.map(item => { return <Text style={styles.cell} key={Math.random().toString()} >{item}</Text> })}
+            {data.map(item => { return <Text style={styles.cell} key={keyGen.generateKey()} >{item}</Text> })}
         </View>
     );
 }

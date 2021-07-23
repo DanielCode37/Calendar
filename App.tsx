@@ -4,8 +4,6 @@ import { StyleSheet, Text, View, Button, Alert } from 'react-native';
 import Table from './components/Table';
 import Calendar from './src/Calendar';
 
-
-
 export default function App() {
 	const calendar = new Calendar;
 	const [data, setData] = useState(calendar.calcTable());
@@ -16,10 +14,6 @@ export default function App() {
 			<StatusBar style="light" />
 		</View>
 	);
-}
-
-function al() {
-	alert()
 }
 
 const styles = StyleSheet.create({
