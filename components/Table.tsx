@@ -20,7 +20,11 @@ function Row(data: any[], index: Number): JSX.Element {
     );
 }
 
-function calcColor(row: Number, value: Number): "whitesmoke" | "grey" {
+function calcColor(row: Number, value: Number): "whitesmoke" | "grey" | "red" {
+    if (value == (new Date).getDate()) {
+        if ((value > 10 && row == 0) || (value < 10 && row == (4 | 5))) { }
+        else return "red"
+    }
     if (row == 0 && value > 10) return "grey";
     if ((row == 5 || row == 4) && value < 10) return "grey";
     return "whitesmoke";
