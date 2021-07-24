@@ -18,8 +18,6 @@ export default function Events() {
 
 const styles = StyleSheet.create({
     container: {
-        borderColor: "lime",
-        borderWidth: 3,
     },
     parent: {
         width: '90%',

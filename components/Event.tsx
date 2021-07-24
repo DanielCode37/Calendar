@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, View, Text, TouchableHighlight, Modal } from 'react-native';
+import EventModal from './EventModal';
 
 export default function Event(props: { title: String, description: String, date: Date }) {
+
+	//TODO: set false, true is just for developing
+	const [modalVisibility, setModalVisibility] = useState(false);
 	return (
-		<TouchableHighlight onLongPress={() => alert()}>
-			<View style={styles.comp}>
-				<Text style={styles.title}>{props.title}</Text>
-				<Text style={styles.date}>{props.date.getHours() + ":" + props.date.getMinutes() + "	 Today"}</Text>
-			</View>
-		</TouchableHighlight>
+		<>
+			<TouchableHighlight onLongPress={() => setModalVisibility(true)}>
+				<View style={styles.comp}>
+					<Text style={styles.title}>{props.title}</Text>
+					<Text style={styles.date}>{props.date.getHours() + ":" + props.date.getMinutes() + "	 Today"}</Text>
+				</View>
+			</TouchableHighlight>
+			<EventModal visible={modalVisibility} setVisible={setModalVisibility} content={props}></EventModal>
+		</>
 	);
 }
 
