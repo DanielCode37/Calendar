@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Text, Modal, StyleSheet, View } from 'react-native';
 
 export default function EventModal(props: { visible: boolean, setVisible: React.Dispatch<React.SetStateAction<boolean>>, content: { title: String, date: Date, description: String } }) {
+    const date = new Date(props.content.date)
     return (
         <Modal visible={props.visible} animationType="slide" transparent={true}>
             <View style={styles.container}>
@@ -10,7 +11,7 @@ export default function EventModal(props: { visible: boolean, setVisible: React.
                 </View>
                 <View style={styles.contentContainer}>
                     <Text style={styles.title}>{props.content.title}</Text>
-                    <Text style={styles.date}>{props.content.date.toLocaleTimeString() + "  " + props.content.date.toLocaleDateString()}</Text>
+                    <Text style={styles.date}>{date.toLocaleTimeString() + "  " + date.toLocaleDateString()}</Text>
                     <Text style={styles.description}>{props.content.description}</Text>
                 </View>
             </View>
